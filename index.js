@@ -13,7 +13,7 @@ client.once("ready", () => {
 
 const pingCommand = require("./commands/ping.js");
 console.log(pingCommand);
-client.once("interactionCreate", (interaction) => {
+client.on("interactionCreate", (interaction) => {
   pingCommand
     .execute(interaction)
     .then(console.log(`${pingCommand.name} was executed !`))
