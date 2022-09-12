@@ -11,5 +11,14 @@ client.once("ready", () => {
   console.log("Ready!");
 });
 
+const pingCommand = require("./commands/ping.js");
+console.log(pingCommand);
+client.once("interactionCreate", (interaction) => {
+  pingCommand
+    .execute(interaction)
+    .then(console.log(`${pingCommand.name} was executed !`))
+    .catch(console.error);
+});
+
 // Login discord bot with secret token
 client.login(process.env.TOKEN);
