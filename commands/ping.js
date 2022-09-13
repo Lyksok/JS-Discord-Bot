@@ -1,9 +1,12 @@
+const { SlashCommandBuilder } = require("discord.js");
+
 module.exports = {
-  name: "ping-command",
-  description: "Replies with Pong",
-  execute: function (interaction, client) {
+  data: new SlashCommandBuilder()
+    .setName("ping")
+    .setDescription("Replies with Pong"),
+  async execute(interaction) {
     return new Promise(async (resolve, reject) => {
-      await interaction.reply("Pong").catch((error) => {
+      await interaction.reply("Pong !").catch((error) => {
         reject(error);
       });
       resolve();
