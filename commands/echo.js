@@ -11,13 +11,7 @@ module.exports = {
         .setRequired(true)
     ),
   async execute(interaction) {
-    await new Promise(async (resolve, reject) => {
-      await interaction.reply(
-        interaction.options.getString("input").catch((error) => {
-          reject(error);
-        })
-      );
-      resolve();
-    });
+    const string = interaction.option.getString("input");
+    await interaction.reply(string);
   },
 };

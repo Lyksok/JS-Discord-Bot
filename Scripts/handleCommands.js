@@ -16,14 +16,7 @@ for (const file of commandFiles) {
   const command = require(filePath);
   commands.push(command.data.toJSON());
 }
-/*
-const commands = [
-  new SlashCommandBuilder().setName("ping").setDescription("Replies with pong"),
-  new SlashCommandBuilder()
-    .setName("server")
-    .setDescription("Send server's informations"),
-].map((command) => command.toJSON());
-*/
+
 const rest = new REST({ version: "10" }).setToken(TOKEN);
 console.log(commands);
 (async () => {
