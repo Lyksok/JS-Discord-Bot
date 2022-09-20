@@ -9,7 +9,7 @@
     "del-cmds":"node ./Scripts/deleteIntegration.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jans",
   "license": "ISC",
   "dependencies": {
     "@discordjs/rest": "^1.1.0",
